@@ -1,0 +1,11 @@
+<form (ngSubmit)="submitForm()" #visitorForm="ngForm">
+  <input type="text" name="name" [(ngModel)]="visitor.name" placeholder="Name" required />
+  <br />
+  <input type="email" name="email" [(ngModel)]="visitor.email" placeholder="Email" required />
+  <br />
+  <input type="date" name="dob" [(ngModel)]="visitor.dob" placeholder="Date of Birth" required />
+  <br />
+  <input type="text" name="aadhar" [(ngModel)]="visitor.aadhar" placeholder="Aadhar Number" required />
+  <br />
+  <button type="submit">Register Visitor</button>
+</form>
