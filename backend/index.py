@@ -1,10 +1,12 @@
 from flask import Flask, jsonify
+from flask_cors import CORS 
 
-app = Flask(__name__)
+app = Flask(__name__)        
+CORS(app)                    
 
 @app.route('/')
 def home():
-    return jsonify({"message": "Flask is running!"})
+    return jsonify({"message": "Sushavan Dada!"})
 
 if __name__ == '__main__':
     app.run(debug=True)
