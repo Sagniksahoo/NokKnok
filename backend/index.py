@@ -15,9 +15,9 @@ CORS(app)
 
 
 # Connect to MongoDB
-mongo_uri = os.getenv("MONGO_URI")  # e.g. 'mongodb://localhost:27017/nokknok_db'
+mongo_uri = os.getenv("MONGO_URI")  
 client = MongoClient(mongo_uri)
-db = client.get_database()  # Gets 'nokknok_db'
+db = client.get_database() 
 
 # Sample collection
 visitors = db.visitors
@@ -25,9 +25,15 @@ visitors = db.visitors
 
 
 
+
+
+
 @app.route('/')
 def home():
     return jsonify({"message": "Sushavan Dada!"})
+
+
+# @app.route('/visitor')
 
 if __name__ == '__main__':
     app.run(debug=True)
