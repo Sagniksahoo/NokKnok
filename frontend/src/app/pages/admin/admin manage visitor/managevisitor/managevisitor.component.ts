@@ -31,7 +31,7 @@ export class ManagevisitorComponent {
     this.AdminService.deleteVisitor(aadhar).subscribe({
       next: res => {
         alert('Visitor deleted successfully.');
-        this.ngOnInit(); // Refresh table
+        this.ngOnInit();
       },
       error: err => {
         console.error('Delete failed:', err);
