@@ -1,4 +1,4 @@
-<form (ngSubmit)="submitForm()" #visitorForm="ngForm">
+<!-- <form (ngSubmit)="submitForm()" #visitorForm="ngForm">
   <input type="text" name="name" [(ngModel)]="visitor.name" placeholder="Name" required />
   <br />
   <input type="email" name="email" [(ngModel)]="visitor.email" placeholder="Email" required />
@@ -8,4 +8,25 @@
   <input type="text" name="aadhar" [(ngModel)]="visitor.aadhar" placeholder="Aadhar Number" required />
   <br />
   <button type="submit">Register Visitor</button>
+</form> -->
+
+
+
+<form (ngSubmit)="submitForm()" #visitorForm="ngForm">
+  <input type="text" [(ngModel)]="visitor.name" name="name" placeholder="Name" required />
+  <input type="email" [(ngModel)]="visitor.email" name="email" placeholder="Email" required />
+  <input type="date" [(ngModel)]="visitor.dob" name="dob" required />
+  <input type="text" [(ngModel)]="visitor.aadhar" name="aadhar" placeholder="Aadhar Number" required />
+
+  <div *ngIf="webcamImage">
+    <img [src]="webcamImage.imageAsDataUrl" alt="Captured Image" width="150" />
+  </div>
+
+  <div *ngIf="showWebcam">
+    <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+    <button type="button" (click)="triggerSnapshot()">📸 Take Photo</button>
+  </div>
+  <button type="button" (click)="openCamera()">Open Camera</button>
+
+  <button type="submit">Submit</button>
 </form>

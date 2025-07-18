@@ -6,4 +6,5 @@
 5. To create service : ng g s "Service_Name"
 6.pip install flask_pymongo
 7.pip install python-dotenv=> which is used to load environment variables from a .env file into your Python project.
+8. npm install ngx-webcam  :  access webcam
 

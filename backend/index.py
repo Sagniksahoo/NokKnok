@@ -43,6 +43,7 @@ def add_visitor():
         "email": email,
         "dob": dob,
         "aadhar": aadhar,
+        "photo": data.get("photo"),  # base64 image string
         "registered_at": registration_time
     })
 

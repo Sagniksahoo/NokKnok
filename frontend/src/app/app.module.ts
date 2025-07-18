@@ -18,7 +18,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegistervisitorComponent } from './pages/user/Visitor_register/registervisitor/registervisitor.component';
-
+import { WebcamModule } from 'ngx-webcam';
+import { ManagevisitorComponent } from './pages/admin/admin manage visitor/managevisitor/managevisitor.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,15 @@ import { RegistervisitorComponent } from './pages/user/Visitor_register/register
     FooterComponent,
     HomeComponent,
     RegistervisitorComponent,
+    ManagevisitorComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    WebcamModule
   ],
   providers: [],
   bootstrap: [AppComponent]
