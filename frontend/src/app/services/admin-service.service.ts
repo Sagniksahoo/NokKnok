@@ -17,5 +17,10 @@ export class AdminServiceService {
   }
 
 
+  deleteVisitor(aadhar: string) {
+  return this.http.delete(`${baseUrl}/delete-visitor/${aadhar}`);
+}
+
+
 
 }

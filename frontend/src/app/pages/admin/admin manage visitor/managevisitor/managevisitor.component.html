@@ -2,24 +2,28 @@
   <h2>All Visitors</h2>
   <table border="1" cellpadding="8" cellspacing="0">
     <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>DOB</th>
-        <th>Aadhar</th>
-        <th>Photo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let visitor of visitors">
-        <td>{{ visitor.name }}</td>
-        <td>{{ visitor.email }}</td>
-        <td>{{ visitor.dob }}</td>
-        <td>{{ visitor.aadhar }}</td>
-        <td>
-          <img *ngIf="visitor.photo" [src]="'data:image/jpeg;base64,' + visitor.photo" width="100" alt="Photo" />
-        </td>
-      </tr>
-    </tbody>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>DOB</th>
+    <th>Aadhar</th>
+    <th>Photo</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let visitor of visitors">
+    <td>{{ visitor.name }}</td>
+    <td>{{ visitor.email }}</td>
+    <td>{{ visitor.dob }}</td>
+    <td>{{ visitor.aadhar }}</td>
+    <td>
+      <img *ngIf="visitor.photo" [src]="'data:image/jpeg;base64,' + visitor.photo" width="100" />
+    </td>
+    <td>
+      <button (click)="deleteVisitor(visitor.aadhar)">🗑️ Delete</button>
+    </td>
+  </tr>
+</tbody>
   </table>
 </div>

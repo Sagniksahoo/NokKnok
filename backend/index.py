@@ -57,6 +57,18 @@ def get_visitors():
     visitors = list(db.visitors.find({}, {'_id': 0}))
     return jsonify(visitors)
 
+# Delete User
+
+# DELETE visitor by Aadhar
+@app.route('/delete-visitor/<aadhar>', methods=['DELETE'])
+def delete_visitor(aadhar):
+    result = db.visitors.delete_one({"aadhar": aadhar})
+    if result.deleted_count == 1:
+        return jsonify({"message": "Visitor deleted successfully."}), 200
+    else:
+        return jsonify({"error": "Visitor not found."}), 404
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

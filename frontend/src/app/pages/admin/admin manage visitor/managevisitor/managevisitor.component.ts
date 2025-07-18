@@ -24,4 +24,22 @@ export class ManagevisitorComponent {
     );
   }
 
+
+
+  deleteVisitor(aadhar: string) {
+  if (confirm(`Are you sure you want to delete visitor with Aadhar: ${aadhar}?`)) {
+    this.AdminService.deleteVisitor(aadhar).subscribe({
+      next: res => {
+        alert('Visitor deleted successfully.');
+        this.ngOnInit(); // Refresh table
+      },
+      error: err => {
+        console.error('Delete failed:', err);
+        alert('Error deleting visitor.');
+      }
+    });
+  }
+}
+
+
 }
