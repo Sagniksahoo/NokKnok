@@ -5,14 +5,17 @@ import baseUrl from './helper'
 @Injectable({
   providedIn: 'root'
 })
-export class VisitorServiceService {
+export class AdminServiceService {
 
-  constructor(private http: HttpClient) { }
+ constructor(private http: HttpClient) { }
   
   // private baseUrl = "  http://127.0.0.1:5000/"
 
 
-  addVisitor(visitorData: any): Observable<any> {
-    return this.http.post(`${baseUrl}/add-visitor`, visitorData);
+  viewAllVisitor(){
+    return this.http.get<any[]>(`${baseUrl}/get-all-visitor`)
   }
+
+
+
 }
